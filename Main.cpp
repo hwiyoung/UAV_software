@@ -1,7 +1,7 @@
 /********************************************************
  * Project:			UAV Software
  * Last updated:	2014. 05. 28
- * Developer:		ÀüÀÇÀÍ
+ * Developer:		ì „ì˜ìµ
  ********************************************************/
 
 #include <stdio.h>
@@ -24,45 +24,12 @@ void main(int argc, char *argv[])
 	clock_t start, end;
 	start=clock();
 
-	///*cout << "Config ÆÄÀÏ »ı¼º" << endl;
-	//file_find();*/
-
 	ofstream SaveFile("log.txt");
-
-	//CAerialSimulator AerialSimulator(argv[1]);
-	//AerialSimulator.StartAerialSimulator();
-	//CKLTTracker KLT(argv[2]);
-	//KLT.Startup();
-	//CSimAT SimAT(argv[3]);
-	//SimAT.Initialization();
-	//AerialSimulator.RegisterKLTClient(&KLT);
-	//AerialSimulator.RegisterSimAT(&SimAT);
-	//SimAT.RegisterKLT(&KLT);
-	//AerialSimulator.RunImageExposure();
-	//SimAT.PrintOutResults();		
-	//end=clock();
-	//cout << "¿µ»ó ¸ÅÄª±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;	
-	//SaveFile << "¿µ»ó ¸ÅÄª±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;
 
 	AT_CSimAT AT_SimAT(argv[3]);
 	AT_SimAT.RunSimAT();
-	//_getch();
 	end=clock();
-	cout << "¿µ»ó Áö¿À·¹ÆÛ·±½Ì±îÁöÀÇ ¸ÅÄª±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;
-	SaveFile << "¿µ»ó Áö¿À·¹ÆÛ·±½Ì±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;
-	//_getch();
+	cout << "ì˜ìƒ ì§€ì˜¤ë ˆí¼ëŸ°ì‹±ê¹Œì§€ì˜ ë§¤ì¹­ê¹Œì§€ì˜ ì²˜ë¦¬ ì‹œê°„ì€ "<< (end-start)/CLOCKS_PER_SEC << "ì´ˆ ì…ë‹ˆë‹¤"<< endl;
+	SaveFile << "ì˜ìƒ ì§€ì˜¤ë ˆí¼ëŸ°ì‹±ê¹Œì§€ì˜ ì²˜ë¦¬ ì‹œê°„ì€ "<< (end-start)/CLOCKS_PER_SEC << "ì´ˆ ì…ë‹ˆë‹¤"<< endl;
 
-	//orthoimage_start();
-	//end=clock();
-	//cout << "Á¤»ç¿µ»ó »ı¼º±îÁöÀÇ ¸ÅÄª±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;
-	////SaveFile << "Á¤»ç¿µ»ó »ı¼º±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;
-	////SaveFile.close();
-	//_getch();
-	//exit(0);
-
-	/*ortho();
-	end=clock();
-	cout << "Á¤»ç¿µ»ó »ı¼º±îÁöÀÇ ¸ÅÄª±îÁöÀÇ Ã³¸® ½Ã°£Àº "<< (end-start)/CLOCKS_PER_SEC << "ÃÊ ÀÔ´Ï´Ù"<< endl;
-	_getch();
-	exit(0);*/
 }
