@@ -26,6 +26,7 @@ void main(int argc, char *argv[])
 	clock_t start, end;
 	start=clock();
 
+	// Save the log file
 	ofstream SaveFile("log.txt");
 
 	AT_CSimAT AT_SimAT(argv[3]);

@@ -19,8 +19,6 @@ void ortho()
 
 	IplImage *srcImage;
 
-	/*double pixel_size = klt->m_PS.dX;
-	double focal_length = klt->m_IO.dF;*/
 	double pixel_size = 6E-6;		// unit : m
 	double focal_length = 0.035;	// unit : m
 	double gsd = 0.0;
@@ -30,10 +28,6 @@ void ortho()
 	string img_input, img_output, img_name;
 
 	int pixel_cnt[2];
-	///*pixel_cnt[0] = klt->m_IS.iWidth;
-	//pixel_cnt[1] = klt->m_IS.iHeight;*/
-	//pixel_cnt[0] = 4000;		// height
-	//pixel_cnt[1] = 6000;		// width
 
 	double ground_height = 0.0;
 
@@ -479,7 +473,6 @@ IplImage* pixel_color(int* pixel_cnt, CvMatND* xy_fcs, IplImage* srcImage)
 	cvSetZero(dstImage);
 	cvMerge(FB, FG, FR, NULL, dstImage);
 	
-	//cvReleaseImage(&dstImage);
 	cvReleaseImage(&FB);
 	cvReleaseImage(&FG);
 	cvReleaseImage(&FR);
