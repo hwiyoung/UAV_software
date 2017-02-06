@@ -17,10 +17,12 @@
 
 void main(int argc, char *argv[])
 {	
+	//Load configuration file
 	argv[1]="Input_80_170110\\AerialConfig.txt";
 	argv[2]="Input_80_170110\\KLTConfigModel.txt";
 	argv[3]="Input_80_170110\\SimATConfig.txt";
 
+	//Measure Processing Time
 	clock_t start, end;
 	start=clock();
 
@@ -28,6 +30,7 @@ void main(int argc, char *argv[])
 
 	AT_CSimAT AT_SimAT(argv[3]);
 	AT_SimAT.RunSimAT();
+	//Stop clock
 	end=clock();
 	cout << "영상 지오레퍼런싱까지의 매칭까지의 처리 시간은 "<< (end-start)/CLOCKS_PER_SEC << "초 입니다"<< endl;
 	SaveFile << "영상 지오레퍼런싱까지의 처리 시간은 "<< (end-start)/CLOCKS_PER_SEC << "초 입니다"<< endl;
