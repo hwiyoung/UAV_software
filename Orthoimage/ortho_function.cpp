@@ -121,7 +121,7 @@ void ortho_function(const real_T EO[6], const double em_r[], const double em_g[]
 		}
 	}
 	/*cout<<endl;
-	cout << "¿ªÇà·Ä"<<endl;
+	cout << "ì—­í–‰ë ¬"<<endl;
 	cout<< b_R[0] << " " << b_R[1] << " " << b_R[2] << endl;
 	cout<< b_R[3] << " " << b_R[4] << " " << b_R[5] << endl;
 	cout<< b_R[6] << " " << b_R[7] << " " << b_R[8] << endl;
@@ -181,7 +181,7 @@ void ortho_function(const real_T EO[6], const double em_r[], const double em_g[]
 	col_s=floor(col_s);row_s=floor(row_s);
 	
 	cout << "GSD : "<<gsd<<endl;
-	cout << "°ÝÀÚ¼ö : " <<(int)(col_s*row_s) <<endl;
+	cout << "ê²©ìžìˆ˜ : " <<(int)(col_s*row_s) <<endl;
 
 
 	i0=(int32_T)row_s*col_s;
@@ -241,7 +241,6 @@ void ortho_function(const real_T EO[6], const double em_r[], const double em_g[]
 			}
 			else 
 			{
-				//cout << xvalue << "\t" << yvalue << endl;
 				tmp_b=(int)em_b[(int)(xvalue*pixel_cnt[1]+yvalue)];
 				tmp_g=(int)em_g[(int)(xvalue*pixel_cnt[1]+yvalue)];
 				tmp_r=(int)em_r[(int)(xvalue*pixel_cnt[1]+yvalue)];	
@@ -267,7 +266,7 @@ void ortho_function(const real_T EO[6], const double em_r[], const double em_g[]
 	cvReleaseData(FR);
 	cvReleaseData(FG);
 	cvReleaseData(FB);
-	cout << img << "ÀúÀå ¿Ï·á" << endl; 
+	cout << img << "ì €ìž¥ ì™„ë£Œ" << endl; 
 }
 
 void orthoimage_start()
@@ -293,8 +292,8 @@ void orthoimage_start()
     vector<Data> vec; 
     if( !in.is_open() ) 
 	{     	
-		cout <<"EO ÆÄÀÏÀ» È®ÀÎÇÒ ¼ö ¾ø½À´Ï´Ù" << endl;
-		cout << "ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" << endl;
+		cout <<"EO íŒŒì¼ì„ í™•ì¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤" << endl;
+		cout << "í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”" << endl;
 		_getch();			
 		exit(0);
     } 
@@ -307,21 +306,21 @@ void orthoimage_start()
 		img_name=vec[k].imagename;
 		img=input_foldername + img_name;
 		cout<<endl;
-		cout << img_name << " Ã³¸® ½ÃÀÛ" << endl;
+		cout << img_name << " ì²˜ë¦¬ ì‹œìž‘" << endl;
 
 		srcImage=cvLoadImage(img.c_str());
 		
 		if(srcImage==NULL){
-			cout << img_name << "¿¡ ÇØ´çÇÏ´Â »çÁøÀÌ ¾ø½À´Ï´Ù" <<endl;
-			cout << "ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" << endl;
+			cout << img_name << "ì— í•´ë‹¹í•˜ëŠ” ì‚¬ì§„ì´ ì—†ìŠµë‹ˆë‹¤" <<endl;
+			cout << "í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”" << endl;
 			_getch();	
 			exit(0);
 		}		
 		if(vec[k].eo[2] < 0)
 		{
-			cout << "Z °ª : " << vec[k].eo[2] << endl;
-			cout << k << "¹øÂ°ÀÇ Estimate EOÀÇ Z°ªÀÌ 0º¸´Ù ÀÛÀ¸´Ï È®ÀÎÇÏ½Ã±â ¹Ù¶ø´Ï´Ù" << endl;
-			cout << "ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" << endl;
+			cout << "Z ê°’ : " << vec[k].eo[2] << endl;
+			cout << k << "ë²ˆì§¸ì˜ Estimate EOì˜ Zê°’ì´ 0ë³´ë‹¤ ìž‘ìœ¼ë‹ˆ í™•ì¸í•˜ì‹œê¸° ë°”ëžë‹ˆë‹¤" << endl;
+			cout << "í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”" << endl;
 			_getch();			
 			exit(0);
 
@@ -334,14 +333,14 @@ void orthoimage_start()
 		dstB=cvCreateImage(cvSize(pixel_cnt[0],pixel_cnt[1]), IPL_DEPTH_8U, 1);
 		dstG=cvCreateImage(cvSize(pixel_cnt[0],pixel_cnt[1]), IPL_DEPTH_8U, 1);
 		dstR=cvCreateImage(cvSize(pixel_cnt[0],pixel_cnt[1]), IPL_DEPTH_8U, 1);
-		cout<<"dstB,G,R ¼±¾ð"<<endl;
+		cout<<"dstB,G,R ì„ ì–¸"<<endl;
 
 		cvSplit(srcImage, dstB, dstG, dstR, NULL);
 		cvSetImageROI(dstB, cvRect(0,0,pixel_cnt[0],pixel_cnt[1]));	
 		cvSetImageROI(dstG, cvRect(0,0,pixel_cnt[0],pixel_cnt[1]));
 		cvSetImageROI(dstR, cvRect(0,0,pixel_cnt[0],pixel_cnt[1]));
 
-		cout << "dstB,G,R »ý¼º"<<endl;
+		cout << "dstB,G,R ìƒì„±"<<endl;
 		pSrcMatB=cvGetMat(dstB,&matHeader1);
 		pSrcMatG=cvGetMat(dstG,&matHeader2);
 		pSrcMatR=cvGetMat(dstR,&matHeader3);
@@ -350,7 +349,7 @@ void orthoimage_start()
 		memset((void *)&em_g[0], 0, 24000000U * sizeof(real_T));
 		memset((void *)&em_b[0], 0, 24000000U * sizeof(real_T));	
 		
-		cout<<"em_r,g,b ¸Þ¸ð¸® ÇÒ´ç"<<endl;
+		cout<<"em_r,g,b ë©”ëª¨ë¦¬ í• ë‹¹"<<endl;
 
 		for(i=0;i<pixel_cnt[1];i++)
 		{
@@ -362,7 +361,7 @@ void orthoimage_start()
 			}
 		}
 
-		cout<<"em_r,g,b¿¡ È­¼Ò°ª ÀúÀå"<<endl;
+		cout<<"em_r,g,bì— í™”ì†Œê°’ ì €ìž¥"<<endl;
 		cvReleaseImage(&srcImage);
 		cvReleaseData(pSrcMatR);
 		cvReleaseData(pSrcMatG);
@@ -372,12 +371,12 @@ void orthoimage_start()
 		cvReleaseData(dstG);
 		cvReleaseData(dstR);
 
-		cout << k+1 <<"¹ø Â° ortho_function ÁøÀÔ"<<endl;
+		cout << k+1 <<"ë²ˆ ì§¸ ortho_function ì§„ìž…"<<endl;
 		ortho_function(EO, em_r, em_g, em_b, img_name);
 
 		end=clock();
 
-		printf("Ã³¸® ½Ã°£ = %.2f\n",(double)(end-start)/CLOCKS_PER_SEC); 	
+		printf("ì²˜ë¦¬ ì‹œê°„ = %.2f\n",(double)(end-start)/CLOCKS_PER_SEC); 	
 	}
 	
 }
