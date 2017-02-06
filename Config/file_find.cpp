@@ -1,7 +1,7 @@
 /********************************************************
- * Project:			Config  ¸¸µé±â
+ * Project:			Config  ë§Œë“¤ê¸°
  * Last updated:	2014. 05. 28
- * Developer:		ÀüÀÇÀÍ
+ * Developer:		ì „ì˜ìµ
  ********************************************************/
 
 #include <vector>
@@ -21,10 +21,10 @@ void file_find()
 {
 	int i=0;
 		
-    _finddata_t fd;
-    long handle;
-    int result = 1;
-    handle = _findfirst("Input_image\\*.jpg", &fd);
+	_finddata_t fd;
+	long handle;
+	int result = 1;
+	handle = _findfirst("Input_image\\*.jpg", &fd);
  
     if (handle == -1)
     {
@@ -62,7 +62,7 @@ void file_find()
 }
 void AerialConfig(vector<string> imageList)
 {
-	cout << "Aerial Config ÆÄÀÏ »ı¼º" << endl;
+	cout << "Aerial Config íŒŒì¼ ìƒì„±" << endl;
 	ofstream config;
 	config.open("Input\\AerialConfig.txt");
 
@@ -95,7 +95,7 @@ void AerialConfig(vector<string> imageList)
 
 void SimATConfig()
 {
-	cout << "SimAT Config ÆÄÀÏ »ı¼º" << endl;
+	cout << "SimAT Config íŒŒì¼ ìƒì„±" << endl;
 	ofstream config;
 	config.open("Input\\SimATConfig.txt");
 
@@ -130,7 +130,7 @@ void SimATConfig()
 
 void KLTConfig()
 {
-	cout << "kLT Config ÆÄÀÏ »ı¼º" << endl;
+	cout << "kLT Config íŒŒì¼ ìƒì„±" << endl;
 	ofstream config;
 	config.open("Input\\KLTConfigModel.txt");
 
