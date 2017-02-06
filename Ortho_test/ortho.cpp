@@ -42,8 +42,8 @@ void ortho()
 	vector<Data> vec;
 	if (!in.is_open())
 	{
-		cout << "EO ÆÄÀÏÀ» È®ÀÎÇÒ ¼ö ¾ø½À´Ï´Ù" << endl;
-		cout << "ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" << endl;
+		cout << "EO íŒŒì¼ì„ í™•ì¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤" << endl;
+		cout << "í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”" << endl;
 		_getch();
 		exit(0);
 	}
@@ -59,7 +59,7 @@ void ortho()
 		img_name = vec[k].imagename;
 		img_input = input_foldername + img_name;
 		cout << endl;
-		cout << img_name << " Ã³¸® ½ÃÀÛ" << endl;
+		cout << img_name << " ì²˜ë¦¬ ì‹œìž‘" << endl;
 
 		srcImage = cvLoadImage(img_input.c_str());
 		
@@ -67,17 +67,17 @@ void ortho()
 		pixel_cnt[1] = srcImage->width;		// width
 
 		if (srcImage == NULL) {
-			cout << img_name << "¿¡ ÇØ´çÇÏ´Â »çÁøÀÌ ¾ø½À´Ï´Ù" << endl;
-			cout << "ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" << endl;
+			cout << img_name << "ì— í•´ë‹¹í•˜ëŠ” ì‚¬ì§„ì´ ì—†ìŠµë‹ˆë‹¤" << endl;
+			cout << "í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”" << endl;
 			_getch();
 			exit(0);
 		}
 
 		if (vec[k].eo[2] < 0)
 		{
-			cout << "Z °ª : " << vec[k].eo[2] << endl;
-			cout << k << "¹øÂ°ÀÇ Estimate EOÀÇ Z°ªÀÌ 0º¸´Ù ÀÛÀ¸´Ï È®ÀÎÇÏ½Ã±â ¹Ù¶ø´Ï´Ù" << endl;
-			cout << "ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ú½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¼¼¿ä" << endl;
+			cout << "Z ê°’ : " << vec[k].eo[2] << endl;
+			cout << k << "ë²ˆì§¸ì˜ Estimate EOì˜ Zê°’ì´ 0ë³´ë‹¤ ìž‘ìœ¼ë‹ˆ í™•ì¸í•˜ì‹œê¸° ë°”ëžë‹ˆë‹¤" << endl;
+			cout << "í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê² ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”" << endl;
 			_getch();
 			exit(0);
 		}
@@ -94,7 +94,7 @@ void ortho()
 		//cvReleaseImage(&srcImage);
 		cvReleaseImage(&dstImage);
 
-		cout << img_name << "ÀúÀå ¿Ï·á" << endl;
+		cout << img_name << "ì €ìž¥ ì™„ë£Œ" << endl;
 	}	
 }
 
@@ -487,6 +487,7 @@ IplImage* pixel_color(int* pixel_cnt, CvMatND* xy_fcs, IplImage* srcImage)
 	return dstImage;
 }
 
+//Get max value from n
 double getMax(double* n, int size) {
 	double max = n[0];
 
@@ -496,6 +497,7 @@ double getMax(double* n, int size) {
 	return max;
 }
 
+//Get min value from n
 double getMin(double* n, int size) {
 	double min = n[0];
 
